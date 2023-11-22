@@ -1,6 +1,0 @@
-[submodule "PreReqQ4"]
-	path = PreReqQ4
-	url = ./PreReqQ4
-[submodule "Rust-PreReq-Q3"]
-	path = Rust-PreReq-Q3
-	url = ./Rust-PreReq-Q3
