@@ -12,7 +12,8 @@ const connection = new Connection("https://api.devnet.solana.com", commitment);
 const token_decimals = 1_000_000n;
 
 // Mint address
-const mint = new PublicKey("9Yp4qPKnrns9cXSHQ3eQzpNKzvSEn21HWNAmaTsq1WrT");
+// const mint = new PublicKey("9Yp4qPKnrns9cXSHQ3eQzpNKzvSEn21HWNAmaTsq1WrT");
+const mint = new PublicKey("26PQPo6wyRVnpEt8mAu1v5Cg5p4hTCQrPw3KEcEPXsfg");
 // const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 
 (async () => {
