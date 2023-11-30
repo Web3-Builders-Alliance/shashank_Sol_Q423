@@ -1,5 +1,5 @@
 import { Commitment, Connection, Keypair, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js"
-import wallet from "../wba-wallet.json"
+import wallet from "./wallet/wba-wallet.json"
 import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
 
 // We're going to import our keypair from the wallet file
@@ -10,7 +10,7 @@ const commitment: Commitment = "confirmed";
 const connection = new Connection("https://api.devnet.solana.com", commitment);
 
 // Mint address
-const mint = new PublicKey("vRe9T4vc4HXsnUq7viE7iAtHtkj8p9mT38EbCgLEDDZ");
+const mint = new PublicKey("37jAcRv8mqCLnZ4HQ83bmkoJM2w9oF5MWqWptXRrXyE9");
 
 // Recipient address
 const to = new PublicKey("HDaVYzEeTsu5v3YzojroWt3GLAhHNvDja6VnCjURwJHk");

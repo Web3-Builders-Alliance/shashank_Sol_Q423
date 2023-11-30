@@ -6,14 +6,14 @@
 // //gdtKSTXYULQNx87fdD3YgXkzVeyFeqwtxHm6WdEb5a9YJRnHse7GQr7t5pbepsyvUCk7VvksUGhPt4SZ8JHVSkt
 // let wallet = bs58::decode(base58).into_vec().unwrap();
 
-// // fn base58_to_wallet() {
-// //   // println!("Enter your name:");
-// //   let stdin = io::stdin();
-// //   let base58 = stdin.lock().lines().next().unwrap().unwrap(); 
-// //   //gdtKSTXYULQNx87fdD3YgXkzVeyFeqwtxHm6WdEb5a9YJRnHse7GQr7t5pbepsyvUCk7VvksUGhPt4SZ8JHVSkt
-// //   let wallet = bs58::decode(base58).into_vec().unwrap();
-// //   println!("{:?}", wallet);
-// // }
+// fn base58_to_wallet() {
+//   // println!("Enter your name:");
+//   let stdin = io::stdin();
+//   let base58 = stdin.lock().lines().next().unwrap().unwrap(); 
+//   //gdtKSTXYULQNx87fdD3YgXkzVeyFeqwtxHm6WdEb5a9YJRnHse7GQr7t5pbepsyvUCk7VvksUGhPt4SZ8JHVSkt
+//   let wallet = bs58::decode(base58).into_vec().unwrap();
+//   println!("{:?}", wallet);
+// }
 // // base58_to_wallet()
 
 // // fn wallet_to_base58() {

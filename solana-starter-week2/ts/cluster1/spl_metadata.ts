@@ -1,5 +1,5 @@
 import { Commitment, Connection, Keypair, Transaction, sendAndConfirmTransaction, PublicKey, Signer } from "@solana/web3.js"
-import wallet from "../wba-wallet.json"
+import wallet from "./wallet/wba-wallet.json"
 import {createMetadataAccountV3, burnNft } from "@metaplex-foundation/mpl-token-metadata";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
 import { publicKey, signerIdentity, createSignerFromKeypair } from '@metaplex-foundation/umi';
@@ -28,7 +28,7 @@ umi.use(signerIdentity(signerKeypair));
 
 //We can create a new valid public key from a variety of inputs using the publicKey helper method [NB this are just publickey and are NOT signers]:
 // From a base58 string [Our case]
-const mint =  publicKey('9iJARb4ZchofYTHzerUSqp1qm63kQ7GsyFpaZjp1TJLW')
+const mint =  publicKey('37jAcRv8mqCLnZ4HQ83bmkoJM2w9oF5MWqWptXRrXyE9')
 const tokenMetadataProgramId = publicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
 // From a 32-byte buffer -> publicKey(new Uint8Array(32));
 // From a PublicKey or Signer type -> publicKey(someWallet as PublicKey | Signer);
