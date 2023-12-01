@@ -4,7 +4,7 @@ import wallet from "./wallet/dev-wallet.json"
 // Import our dev wallet keypair from the wallet file
 const from = Keypair.fromSecretKey(new Uint8Array(wallet));
 // Define our WBA public key
-const to = new PublicKey("Djmvp3CKTZW8KLG3istDAQc9dvWuzpcRg6vkvxPHwB9B");
+const to = new PublicKey("7oWncNPKkPodm6eAyaqAgvdU7nWviyMkcKosGdatWm7N");
 
 //Create a Solana devnet connection
 const connection = new Connection("https://api.devnet.solana.com", "confirmed");

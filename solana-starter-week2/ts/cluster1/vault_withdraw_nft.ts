@@ -40,7 +40,7 @@ const program = new Program<WbaVault>(
   provider
 );
 // Create a random keypair
-const vaultState = new PublicKey("6J3n4C4Br4XUSk23aazWxRDVAkJbeD34V9eo16g18UbP");
+const vaultState = new PublicKey("2SAziqFY7VY5187gRzvRjc6kZxMzn2GwratsyeWE4cbF");
 // Create the PDA for our enrollment account
 // Seeds are "auth", vaultState
 const [vaultAuth, _vaultAuth_bump] = PublicKey.findProgramAddressSync(
@@ -57,7 +57,7 @@ const [vault_key, _vault_bump] = PublicKey.findProgramAddressSync(
 const token_decimals = 1000000;
 
 // Mint address
-const mint = new PublicKey("Ek71qTts5QXFrxsbakxu67wPVGPyojDDLdU5VinhznjD");
+const mint = new PublicKey("4fxZhkfvCmNU4r23VDRHMQyXo72Jaov2hNPJ7HFkVPZd");
 
 // Execute our deposit transaction
 (async () => {

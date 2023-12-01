@@ -1,76 +1,65 @@
-import { Commitment, Connection, Keypair, Transaction, sendAndConfirmTransaction, PublicKey, Signer } from "@solana/web3.js"
-import wallet from "./wallet/wba-wallet.json"
-import {createMetadataAccountV3, burnNft } from "@metaplex-foundation/mpl-token-metadata";
-import { createUmi } from "@metaplex-foundation/umi-bundle-defaults"
-import { publicKey, signerIdentity, createSignerFromKeypair } from '@metaplex-foundation/umi';
-import { publicKey as publicKeySerializer, string } from '@metaplex-foundation/umi/serializers';
-import { base58 } from "@metaplex-foundation/umi/serializers";
+import { PublicKey } from "@solana/web3.js";
+import wallet from "./wallet/wba-wallet.json";
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+import { createMetadataAccountV3 } from "@metaplex-foundation/mpl-token-metadata";
+import {
+  createSignerFromKeypair,
+  publicKey,
+  signerIdentity,
+} from "@metaplex-foundation/umi";
 
-//Create a Solana devnet connection
-const commitment: Commitment = "confirmed";
-const connection = new Connection("https://api.devnet.solana.com", commitment);
+// Define our Mint address
+const mint = new PublicKey("4gYAuoNJN9uf1m3VDmnnMWtJ5ELPKeHaejZuTor5tTas");
 
-//Create a Umi instance
-const RPC_ENDPOINT = "https://api.devnet.solana.com";
-const umi = createUmi(RPC_ENDPOINT);
+// Add the Token Metadata Program
+const token_metadata_program_id = new PublicKey(
+  "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+);
 
-
-// Whilst Umi only relies on the Signer interface to request signatures from a wallet, it also defines a Keypair type and a KeypairSigner type that are explicitly aware of their secret key.
-// We can generate new Keypair object with EdDSA interface with this function:
-// From a secret key [our case]
-let keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(wallet));
-// From a seed -> const myKeypair = umi.eddsa.createKeypairFromSeed(mySeed);
-// Create a new random keypair -> const myKeypair = umi.eddsa.generateKeypair();
-
-// In order to use these keypairs as signers throughout your application, you can use the createSignerFromKeypair helper method:
-const signerKeypair = createSignerFromKeypair(umi, keypair);
-umi.use(signerIdentity(signerKeypair));
-
-//We can create a new valid public key from a variety of inputs using the publicKey helper method [NB this are just publickey and are NOT signers]:
-// From a base58 string [Our case]
-const mint =  publicKey('37jAcRv8mqCLnZ4HQ83bmkoJM2w9oF5MWqWptXRrXyE9')
-const tokenMetadataProgramId = publicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s');
-// From a 32-byte buffer -> publicKey(new Uint8Array(32));
-// From a PublicKey or Signer type -> publicKey(someWallet as PublicKey | Signer);
-
-// Each seed must be serialized as a Uint8Array to be utilized as seeds.
-const seeds = 
-  [string({ size: 'variable' }).serialize('metadata'),
-  publicKeySerializer().serialize(tokenMetadataProgramId),
-  publicKeySerializer().serialize(mint),
+// Create PDA for token metadata
+const metadata_seeds = [
+  Buffer.from("metadata"),
+  token_metadata_program_id.toBuffer(),
+  mint.toBuffer(),
 ];
-//To derive a new PDA, we can use the findPda method of the EdDSA interface.
-const metadata_pda = umi.eddsa.findPda(tokenMetadataProgramId, seeds);
+const [metadata_pda, _bump] = PublicKey.findProgramAddressSync(
+  metadata_seeds,
+  token_metadata_program_id
+);
+
+// Create a UMI connection
+const umi = createUmi("https://api.devnet.solana.com");
+const keypair = umi.eddsa.createKeypairFromSecretKey(new Uint8Array(wallet));
+const signer = createSignerFromKeypair(umi, keypair);
+umi.use(signerIdentity(signer));
 
 (async () => {
-    let tx = createMetadataAccountV3(
-        umi,
-        {
-            //metadata: metadata_pda, 
-            mint: mint,
-            mintAuthority: signerKeypair,
-            //payer: signerKeypair,
-            updateAuthority: keypair.publicKey,
-            data: {
-                name: "L0STE - Test Token #1",
-                symbol: "TST",
-                uri: "https://arweave.net/euAlBrhc3NQJ5Q-oJnP10vsQFjTV7E9CgHZcVm8cogo",
-                sellerFeeBasisPoints: 1000,
-                creators: [
-                    {address: keypair.publicKey, verified: true, share: 100 }
-                ],
-                collection: null,
-                uses: null,
-            },
-            isMutable: true,
-            collectionDetails: null,
-        }
-    );
-    // console.log(tx)
-    
-    let result = await tx.sendAndConfirm(umi);
-    // console.log(result)
-    const signature = base58.deserialize(result.signature);
-    // console.log(signature)
-    console.log(`tx hash: `, signature);
+  try {
+    // Start here
+    let myTransaction = createMetadataAccountV3(umi, {
+      //accounts
+      metadata: publicKey(metadata_pda.toString()),
+      mint: publicKey(mint.toString()),
+      mintAuthority: signer,
+      payer: signer,
+      updateAuthority: keypair.publicKey,
+      data: {
+        name: "Super Token",
+        symbol: "$UP",
+        uri: "super_token_example_uri.com",
+        sellerFeeBasisPoints: 0,
+        creators: null,
+        collection: null,
+        uses: null,
+      },
+      isMutable: true,
+      collectionDetails: null,
+    });
+
+    let result = await myTransaction.sendAndConfirm(umi);
+
+    console.log(result.signature);
+  } catch (e) {
+    console.error(`Oops, something went wrong: ${e}`);
+  }
 })();

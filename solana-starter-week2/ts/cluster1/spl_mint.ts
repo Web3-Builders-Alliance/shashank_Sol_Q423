@@ -1,6 +1,11 @@
 import { Keypair, PublicKey, Connection, Commitment } from "@solana/web3.js";
-import { getOrCreateAssociatedTokenAccount, mintTo } from '@solana/spl-token';
-import wallet from "./wallet/wba-wallet.json"
+import {
+  getAccount,
+  getMint,
+  getOrCreateAssociatedTokenAccount,
+  mintTo,
+} from "@solana/spl-token";
+import wallet from "./wallet/wba-wallet.json";
 
 // Import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
@@ -9,25 +14,60 @@ const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 const commitment: Commitment = "confirmed";
 const connection = new Connection("https://api.devnet.solana.com", commitment);
 
-const token_decimals = 1_000_000n;
+const token_decimals = 1_000_000;
 
 // Mint address
-// const mint = new PublicKey("9Yp4qPKnrns9cXSHQ3eQzpNKzvSEn21HWNAmaTsq1WrT");
-const mint = new PublicKey("37jAcRv8mqCLnZ4HQ83bmkoJM2w9oF5MWqWptXRrXyE9");
-// const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
+const mint = new PublicKey("4PQkf4qi6DL9ETDEwWwMS6T5K5j6FJfwqE5kyjNxPQtm");
 
 (async () => {
-    try {
-        const ata=await getOrCreateAssociatedTokenAccount(connection, keypair, mint, keypair.publicKey);
-        // Create an ATA
-        // const ata = ???
-        console.log(`Your ata is: ${ata.address.toBase58()}`);
+  try {
+    // Create an ATA
+    const AssociatedtokenAccount = await getOrCreateAssociatedTokenAccount(
+      connection,
+      keypair,
+      mint,
+      keypair.publicKey,
+      undefined,
+      commitment
+    );
 
-        const mintTx = await mintTo(connection, keypair, mint, ata.address, keypair.publicKey, token_decimals);
-        // Mint to ATA
-        // const mintTx = ???
-        console.log(`Your mint txid: ${mintTx}`);
-    } catch(error) {
-        console.log(`Oops, something went wrong: ${error}`)
-    }
-})()
+    // console.log(`Your ata is: ${ata.address.toBase58()}`);
+    console.log(
+      "Associated Token Account Address",
+      AssociatedtokenAccount.address.toBase58()
+    );
+
+    const AssociatedtokenAccountInfo = await getAccount(
+      connection,
+      AssociatedtokenAccount.address
+    );
+
+    console.log(
+      "AssociatedtokenAccount.amount pre-mint",
+      AssociatedtokenAccountInfo.amount
+    );
+    // Mint to ATA
+    await mintTo(
+      connection,
+      keypair,
+      mint,
+      AssociatedtokenAccount.address,
+      keypair,
+      100 * token_decimals
+    );
+
+    const mintInfo = await getMint(connection, mint);
+    console.log("token supply", mintInfo.supply);
+
+    const updatedAccInfo = await getAccount(
+      connection,
+      AssociatedtokenAccount.address
+    );
+    console.log(
+      "AssociatedtokenAccount.amount post-mint",
+      updatedAccInfo.amount
+    );
+  } catch (error) {
+    console.log(`Oops, something went wrong: ${error}`);
+  }
+})();
