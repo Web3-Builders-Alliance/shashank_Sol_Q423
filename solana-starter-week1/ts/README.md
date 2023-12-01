@@ -13,7 +13,7 @@ spl init<br/>
 spl mint<br/>
 Your ata is: 8i4mFz2uiVTRUf7ZvRWE2KhKBvYkNhKimkK2JvbCUTs9<br/>
 Your mint txid: <br/>3nmnBdtjB5wQKonmn1EVH4i1PKvmLYd81yRFsiPggyExDCDai4EEsE8N5F7eit6tSfswfW4xQrKcoPBdihkZ6RVa
-
+ 
 
 spl metadata<br/>
 tx hash:  [
