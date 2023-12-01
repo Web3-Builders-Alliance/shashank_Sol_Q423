@@ -5,7 +5,7 @@ import { AnchorVoteSolb } from "../target/types/anchor_vote_solb";
 describe("anchor-vote-solb", () => {
   // Configure the client to use the local cluster.
   anchor.setProvider(anchor.AnchorProvider.env());
-
+ 
   const program = anchor.workspace.AnchorVoteSolb as Program<AnchorVoteSolb>;
 
   it("Is initialized!", async () => {
