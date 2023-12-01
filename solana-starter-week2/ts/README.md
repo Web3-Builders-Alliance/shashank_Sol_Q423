@@ -74,7 +74,7 @@ Deposit success! Check out your TX here:<br/>
 
 https://explorer.solana.com/tx/4cVQ4odQR1ocVKacdpwoxhaDEakp9FEMUz1ouMve8iY45rr5xCdbMhmxHzanRpvPK9abewqnisHer8pLHT8hHCtE?cluster=devnet<br/>
 
-
+ 
 ts-node vault_withdraw_nft.ts <br/>
 Deposit success! Check out your TX here:<br/>
 
