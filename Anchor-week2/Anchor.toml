@@ -5,7 +5,7 @@ seeds = false
 skip-lint = false
 
 [programs.localnet]
-anchor_vote_solb = "9VSCLy3hTLydi6igAGVbDE2yPapv1t4PW4QH7btBsj26"
+anchor_vote_solb = "vote7hbbvFUD8KoUcoZEcS57aMpqZFYQiCLJuJCVLZm"
 
 [registry]
 url = "https://api.apr.dev"
