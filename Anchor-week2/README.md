@@ -1,3 +1,4 @@
+  // anchor init projectname
   // https://explorer.solana.com/?cluster=custom&customUrl=http%3A%2F%2Flocalhost%3A8899 <br/>
   // anchor build<br/>
   // solana-test-validator<br/>

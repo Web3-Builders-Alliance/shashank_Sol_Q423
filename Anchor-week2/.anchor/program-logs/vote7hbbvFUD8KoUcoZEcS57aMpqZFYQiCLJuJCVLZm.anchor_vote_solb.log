@@ -1,0 +1,11 @@
+Streaming transaction logs mentioning vote7hbbvFUD8KoUcoZEcS57aMpqZFYQiCLJuJCVLZm. Confirmed commitment
+Transaction executed in slot 80:
+  Signature: 4nzoBQAj2kvpPxYpE8iuPVDDk31b75QEmbxEUXDuEmW2sMDedZaDz7caV3EwFhLVzg28Duu5baXZSRbNGfi6L3bY
+  Status: Ok
+  Log Messages:
+    Program vote7hbbvFUD8KoUcoZEcS57aMpqZFYQiCLJuJCVLZm invoke [1]
+    Program log: Instruction: Initialize
+    Program 11111111111111111111111111111111 invoke [2]
+    Program 11111111111111111111111111111111 success
+    Program vote7hbbvFUD8KoUcoZEcS57aMpqZFYQiCLJuJCVLZm consumed 14542 of 200000 compute units
+    Program vote7hbbvFUD8KoUcoZEcS57aMpqZFYQiCLJuJCVLZm success
