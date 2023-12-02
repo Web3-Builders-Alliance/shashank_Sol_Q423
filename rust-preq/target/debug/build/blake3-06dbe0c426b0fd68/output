@@ -68,9 +68,9 @@ cargo:rerun-if-env-changed=HOST_CFLAGS
 HOST_CFLAGS = None
 cargo:rerun-if-env-changed=CFLAGS
 CFLAGS = None
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse2_x86-64_unix.o" "-c" "c/blake3_sse2_x86-64_unix.S"
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse41_x86-64_unix.o" "-c" "c/blake3_sse41_x86-64_unix.S"
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx2_x86-64_unix.o" "-c" "c/blake3_avx2_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse2_x86-64_unix.o" "-c" "c/blake3_sse2_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse41_x86-64_unix.o" "-c" "c/blake3_sse41_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx2_x86-64_unix.o" "-c" "c/blake3_avx2_x86-64_unix.S"
 exit status: 0
 exit status: 0
 exit status: 0
@@ -90,12 +90,12 @@ cargo:rerun-if-env-changed=HOST_ARFLAGS
 HOST_ARFLAGS = None
 cargo:rerun-if-env-changed=ARFLAGS
 ARFLAGS = None
-running: ZERO_AR_DATE="1" "ar" "cq" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_sse2_sse41_avx2_assembly.a" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse2_x86-64_unix.o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse41_x86-64_unix.o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx2_x86-64_unix.o"
+running: ZERO_AR_DATE="1" "ar" "cq" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_sse2_sse41_avx2_assembly.a" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse2_x86-64_unix.o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_sse41_x86-64_unix.o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx2_x86-64_unix.o"
 exit status: 0
-running: "ar" "s" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_sse2_sse41_avx2_assembly.a"
+running: "ar" "s" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_sse2_sse41_avx2_assembly.a"
 exit status: 0
 cargo:rustc-link-lib=static=blake3_sse2_sse41_avx2_assembly
-cargo:rustc-link-search=native=/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out
+cargo:rustc-link-search=native=/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out
 cargo:rerun-if-env-changed=CARGO_FEATURE_PURE
 cargo:rerun-if-env-changed=CARGO_FEATURE_PREFER_INTRINSICS
 cargo:rustc-cfg=blake3_avx512_ffi
@@ -122,7 +122,7 @@ cargo:rerun-if-env-changed=HOST_CFLAGS
 HOST_CFLAGS = None
 cargo:rerun-if-env-changed=CFLAGS
 CFLAGS = None
-running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-mavx512f" "-mavx512vl" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx512_x86-64_unix.o" "-c" "c/blake3_avx512_x86-64_unix.S"
+running: "cc" "-O0" "-ffunction-sections" "-fdata-sections" "-fPIC" "-gdwarf-4" "-fno-omit-frame-pointer" "-m64" "-Wall" "-Wextra" "-std=c11" "-mavx512f" "-mavx512vl" "-o" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx512_x86-64_unix.o" "-c" "c/blake3_avx512_x86-64_unix.S"
 exit status: 0
 cargo:rerun-if-env-changed=AR_x86_64-unknown-linux-gnu
 AR_x86_64-unknown-linux-gnu = None
@@ -140,12 +140,12 @@ cargo:rerun-if-env-changed=HOST_ARFLAGS
 HOST_ARFLAGS = None
 cargo:rerun-if-env-changed=ARFLAGS
 ARFLAGS = None
-running: ZERO_AR_DATE="1" "ar" "cq" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_avx512_assembly.a" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx512_x86-64_unix.o"
+running: ZERO_AR_DATE="1" "ar" "cq" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_avx512_assembly.a" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/c/blake3_avx512_x86-64_unix.o"
 exit status: 0
-running: "ar" "s" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_avx512_assembly.a"
+running: "ar" "s" "/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out/libblake3_avx512_assembly.a"
 exit status: 0
 cargo:rustc-link-lib=static=blake3_avx512_assembly
-cargo:rustc-link-search=native=/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out
+cargo:rustc-link-search=native=/media/sss/353e89ef-0f61-40f0-bd14-27337a774f8e/new web3/shashank_Sol_Q423/rust-preq/target/debug/build/blake3-06dbe0c426b0fd68/out
 cargo:rerun-if-env-changed=CARGO_FEATURE_NEON
 cargo:rerun-if-env-changed=CARGO_FEATURE_NO_NEON
 cargo:rerun-if-env-changed=CARGO_FEATURE_PURE
