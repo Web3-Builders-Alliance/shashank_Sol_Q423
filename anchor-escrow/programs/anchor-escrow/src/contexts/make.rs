@@ -19,7 +19,7 @@ pub struct Make<'info> {
         init,
         payer=maker,
         space=Escrow::INIT_SPACE,
-        seeds=[b"escrow",maker.key().as_ref(),seed.to_le_bytes.as_ref()],
+        seeds=[b"escrow",maker.key().as_ref(),seed.to_le_bytes().as_ref()],
         bump
     )]
     pub escrow:Account<'info,Escrow>,
@@ -44,7 +44,7 @@ impl<'info> Make<'info>{
             mint_a:self.mint_a.key(),
             mint_b:self.mint_b.key(),
             receive,
-            bump:self.bumps.escrow,
+            bump:bumps.escrow,
             vault_bump:bumps.vault
         });
         Ok(())
@@ -61,6 +61,5 @@ impl<'info> Make<'info>{
             transfer_accounts
         );
         transfer(cpi_ctx,deposit)
-        // Ok(())
     }
 }

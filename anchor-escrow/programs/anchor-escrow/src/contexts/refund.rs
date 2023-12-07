@@ -18,7 +18,7 @@ pub struct Refund<'info> {
         mut,
         close=maker,
         has_one=mint_a,
-        seeds=[b"escrow",maker.key().as_ref(),escrow.to_le_bytes.as_ref()],
+        seeds=[b"escrow",maker.key().as_ref(),escrow.key().as_ref()],
         bump= escrow.bump
     )]
     escrow:Account<'info,Escrow>,
@@ -56,7 +56,7 @@ impl<'info> Refund<'info>{
         &signer_seeds
     );
 
-    transfer(cpi_ctx,self.vault.amount)?;
+    transfer(cpi_ctx,self.vault.amount)
   }
 
   pub fn close_vault(&mut self)->Result<()>{
@@ -79,8 +79,7 @@ impl<'info> Refund<'info>{
         close_accounts,
         &signer_seeds
     );
-    close_account(cpi_ctx);
-    // Ok(())
+    close_account(cpi_ctx)
   }
 
 }
