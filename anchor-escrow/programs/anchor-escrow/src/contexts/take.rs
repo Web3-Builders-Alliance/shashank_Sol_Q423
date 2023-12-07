@@ -20,7 +20,7 @@ pub struct Take<'info> {
     #[account(
         mut,
         associated_token::mint=mint_b,
-        associated_token::authority=taker,
+        associated_token::authority=taker
     )]
     pub taker_ata_b: Account<'info,TokenAccount>,    
     #[account(
@@ -41,17 +41,17 @@ pub struct Take<'info> {
     pub escrow:Account<'info,Escrow>,
     #[account(
         mut,
-        token::mint=mint_a,
-        token::authority=escrow
+        associated_token::mint=mint_a,
+        associated_token::authority=escrow
     )]
     pub vault:Account<'info,TokenAccount>,
     pub associate_token_program:Program<'info,AssociatedToken>,
     pub token_program:Program<'info,Token>,
-    pub system_program:Program<'info,Token>  
+    pub system_program:Program<'info,System>  
 }
 
 impl<'info> Take<'info>{
-    pub fn deposit(&mut self,seed:u64)->Result<()>{
+    pub fn deposit(&mut self)->Result<()>{
         let transfer_accounts=Transfer{
             from: self.taker_ata_b.to_account_info(),
             to:self.taker_ata_b.to_account_info(),
@@ -70,7 +70,7 @@ impl<'info> Take<'info>{
           b"escrow",
           self.maker.to_account_info().key.as_ref(),
           &self.escrow.seed.to_le_bytes()[..],
-          &[self.escrow.bump][..]
+          &[self.escrow.bump]
           ]
         ]; 
         let transfer_accounts=Transfer{
@@ -94,7 +94,7 @@ impl<'info> Take<'info>{
           b"escrow",
           self.maker.to_account_info().key.as_ref(),
           &self.escrow.seed.to_le_bytes()[..],
-          &[self.escrow.bump][..]
+          &[self.escrow.bump]
           ]
         ]; 
     

@@ -41,7 +41,7 @@ impl<'info> Refund<'info>{
       b"escrow",
       self.maker.to_account_info().key.as_ref(),
       &self.escrow.seed.to_le_bytes()[..],
-      &[self.escrow.bump][..]
+      &[self.escrow.bump]
       ]
     ]; 
     let transfer_accounts=Transfer{
@@ -65,7 +65,7 @@ impl<'info> Refund<'info>{
       b"escrow",
       self.maker.to_account_info().key.as_ref(),
       &self.escrow.seed.to_le_bytes()[..],
-      &[self.escrow.bump][..]
+      &[self.escrow.bump]
       ]
     ]; 
 
