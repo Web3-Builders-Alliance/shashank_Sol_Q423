@@ -1,0 +1,13 @@
+/media/sss/bf73e54a-9007-4f46-b675-371d81755fee/anchor-amm/amm-b/target/release/deps/libthiserror_impl-10e633e8b460d14c.so: /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/lib.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/ast.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/attr.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/expand.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/fmt.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/generics.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/prop.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/span.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/valid.rs
+
+/media/sss/bf73e54a-9007-4f46-b675-371d81755fee/anchor-amm/amm-b/target/release/deps/thiserror_impl-10e633e8b460d14c.d: /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/lib.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/ast.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/attr.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/expand.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/fmt.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/generics.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/prop.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/span.rs /home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/valid.rs
+
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/lib.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/ast.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/attr.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/expand.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/fmt.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/generics.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/prop.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/span.rs:
+/home/sss/.cargo/registry/src/github.com-1ecc6299db9ec823/thiserror-impl-1.0.50/src/valid.rs:
